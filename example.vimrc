@@ -1,6 +1,7 @@
 " rough translation of emacs binds to vimrc binds
 
 noremap h h
+" noremap m h //colemak-dh
 noremap n j
 noremap e k
 noremap i l

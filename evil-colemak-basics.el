@@ -45,6 +45,11 @@ different position)."
   :group 'evil-colemak-basics
   :type 'boolean)
 
+(defcustom evil-colemak-basics-mod-dh nil
+  "Whether to use mod-dh layout for colemak."
+  :group 'evil-colemak-basics
+  :type 'boolean)
+
 (defcustom evil-colemak-basics-char-jump-commands nil
   "The set of commands to use for jumping to characters.
 
@@ -74,6 +79,9 @@ rotated; see evil-colemak-basics-rotate-t-f-j."
       "J" 'evil-forward-WORD-end
       "gj" 'evil-backward-word-end
       "gJ" 'evil-backward-WORD-end
+      (when evil-colemak-basics-mod-dh
+        (evil-define-key '(motion normal visual) keymap
+          "m" 'evil-backward-char))
       "k" 'evil-search-next
       "K" 'evil-search-previous
       "gk" 'evil-next-match
